@@ -166,3 +166,19 @@ void searchName(Product *s,int count){
          printf("검색된 데이타 없음!\n");
      }
  }
+void searchweight(Product *s,int count){
+    int search_w=0;
+    int scount_w=0;
+   printf("검색할 무게?");
+    scanf("%d",&search_w);
+
+    printf("====================\n");
+    for(int i=0; i<count; i++){
+       if(s[i].price==-1){
+          if(s[i].weight==search_w){
+             read(s[i],i+1);
+             scount_w++;
+             }
+       }
+ }
+ }
