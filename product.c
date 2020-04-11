@@ -45,7 +45,7 @@ int updatelist(Product *s){
  	printf("수정됨!\n"); 
     return 1;
 }
-int deletlist(Product *s){
+int deletlist(Product s[]){
 //	s->weight=-1;
 	s->price=-1;
 //	s->star=-1;
