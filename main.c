@@ -99,6 +99,16 @@ int main(void){
              }
           }
 }
+
+        else if(menu==7){
+             if(count==0){
+                printf("데이터가 없습니다\n");
+             }
+             else{
+                searchweight(s,curcount);
+             }
+          }
+
     printf("=>종료됨\n");
     return 0;
 }
