@@ -12,7 +12,7 @@ void read(Product s,int count){
 void  nolist(Product *s,int count){
    printf("=============================\n");
 	for(int i=0; i<count; i++){
-	if(s->price==-1) continue;
+	if(s[i].price==-1) continue;
 	read(s[i],i+1);
 }
 printf("\n");
@@ -34,8 +34,10 @@ int loadData(Product s[]){
             return 0;
         }
         for(; ;count++){
-				fscanf(fp,"%d  %4dg %4d원 %4d원  %4d개\n",count,&s[count].weight,&s[count].price,&s[count].s_price,&s[count].star);
-            fgets(s[count].name,sizeof(s[count].name),fp);
+
+				fscanf(fp,"%d    %d   %d   %d",&s[count].weight,&s[count].price,&s[count].s_price,&s[count].star);
+            
+				fgets(s[count].name,sizeof(s[count].name),fp);
             s[count].name[strlen(s[count].name)] = '\0';
 
             if(feof(fp))
@@ -51,7 +53,8 @@ void savelist(Product *s,int count){
 
     for(int i=0; i<count; i++){
         if(s[i].price!=-1){
-				fprintf(fp,"%d  %4dg %4d원 %4d원  %4d개\n",count,s[i].weight,s[i].price,&s[i].s_price,&s[i].star);
+				fprintf(fp," %d %d %d  %d %s\n",s[i].weight,s[i].price,s[i].s_price,s[i].star,s[i].name);
+
         }
         
     }
@@ -82,18 +85,21 @@ void searchName(Product *s,int count){
 
 void searchweight(Product *s,int count){
 	int search_w=0;
-	int scount_w=0;
+	int scount_w;
 	printf("검색할 무게?");
 	scanf("%d",&search_w);
 
 	printf("====================\n");
 	for(int i=0; i<count; i++){
-		if(s[i].price==-1){
+		if(s[i].price!=-1){
 			if(s[i].weight==search_w){
 				read(s[i],i+1);
 				scount_w++;
 				}
 		}
+}
+if(scount_w==0){
+	printf("검색된 데이터 없음!\n");
 }
 }
 void searchStar(Product *s,int count){
@@ -104,12 +110,14 @@ void searchStar(Product *s,int count){
 
 	printf("==================\n");
 	for(int i=0; i<count; i++){
-		if(s[i].price==-1){
-			if(s[i].weight==search_s){
+		if(s[i].price!=-1){
+			if(s[i].star==search_s){
 				read(s[i],i+1);
 				scount_s++;
 				}
 		}
 }
+if(scount_s==0){
+	printf("검색된 데이터 없음!\n");
 }
-
+}
