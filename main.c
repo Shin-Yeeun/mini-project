@@ -82,8 +82,22 @@ int main(void){
  	
 
 	}
-}
-
+} 				else if(menu==5){
+             if(count==0){
+                printf("데이터가 없습니다!\n");
+             }
+             else {
+                savelist(s,curcount);
+             }
+           }
+           else if(menu==6){
+              if(count==0){
+                 printf("데이터가 없습니다\n");
+              }
+              else{
+                searchName(s,curcount);
+             }
+          }
 }
     printf("=>종료됨\n");
     return 0;
