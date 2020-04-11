@@ -182,3 +182,19 @@ void searchweight(Product *s,int count){
        }
  }
  }
+void searchStar(Product *s,int count){
+    int search_s=0;
+    int scount_s=0;
+    printf("검색할 별 개수?");
+    scanf("%d",&search_s);
+
+    printf("==================\n");
+    for(int i=0; i<count; i++){
+       if(s[i].price==-1){
+          if(s[i].weight==search_s){
+             read(s[i],i+1);
+            scount_s++;
+            }
+       }
+ }
+ }
