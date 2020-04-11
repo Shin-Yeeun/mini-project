@@ -145,3 +145,24 @@ void savelist(Product *s,int count){
      printf("저장됨!\n");
      fclose(fp);
  }
+void searchName(Product *s,int count){
+     int scount=0;
+     char search[20];
+
+     printf("검색할 메뉴?");
+     scanf("%s",search);
+
+     printf("=========================\n");
+      for(int i=0; i<count; i++){
+          if(s[i].price!=-1){
+              if(strstr(s[i].name,search)){
+                 read(s[i],i+1);
+                 scount++;
+
+             }
+         }
+     }
+     if(scount==0){
+         printf("검색된 데이타 없음!\n");
+     }
+ }
