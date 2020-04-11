@@ -132,3 +132,16 @@ int loadData(Product s[]){
          printf("=>로딩성공!\n");
          return count;
  }
+void savelist(Product *s,int count){
+     FILE *fp;
+     fp = fopen("product.txt","wt");
+
+     for(int i=0; i<count; i++){
+         if(s[i].price!=-1){
+             fprintf(fp,"%d  %4dg %4d원 %4d원  %4d개\n",count,s[i].weight,s[i].price,&s[i].s_price,&s[i].sta    r);
+         }
+
+     }
+     printf("저장됨!\n");
+     fclose(fp);
+ }
