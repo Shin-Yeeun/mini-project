@@ -98,7 +98,7 @@ int main(void){
                 searchName(s,curcount);
              }
           }
-}
+
 
         else if(menu==7){
              if(count==0){
@@ -108,7 +108,15 @@ int main(void){
                 searchweight(s,curcount);
              }
           }
-
-    printf("=>종료됨\n");
+  if(menu==8){
+             if(count==0){
+                printf("데이터가 없습니다\n");
+             }
+            else{
+                searchStar(s,curcount);
+             }
+          }
+}
+printf("=>종료됨\n");
     return 0;
 }
