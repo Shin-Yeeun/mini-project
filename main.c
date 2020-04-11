@@ -73,50 +73,18 @@ int main(void){
 			printf("DEBUG [main.c] : call deletelist()\n");
 			#endif
 					if(deletlist(&s[no-1])) 
-				count--;
-				deletlist(&p);
+				curcount--;
 }
+				deletlist(&p);
+
 				if(count==0){
 					printf("=>삭제됨!!\n");
  	
 
 	}
 }
+
 }
-    		else if(menu==5){
-				if(count=0){
-					printf("데이터가 없습니다!\n");
-				}
-				else {
-					savelist(s,curcount);
-				}
-			}
-			else if(menu==6){
-				if(count==0){
-					printf("데이터가 없습니다\n");
-				}
-				else{
-					searchname(s,curcount);
-				}
-			}
-				
-			else if(menu==7){
-				if(count==0){
-					printf("데이터가 없습니다\n");
-				}
-				else{
-					searchweight(s,curcount);
-				}
-			}
-			
-			else if(menu==8){
-				if(count==0){
-					printf("데이터가 없습니다\n");
-				}
-				else{
-					searchstar(s,curcount);
-				}
-			}
     printf("=>종료됨\n");
     return 0;
 }
