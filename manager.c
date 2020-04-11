@@ -112,3 +112,23 @@ void searchStar(Product *s,int count){
 		}
 }
 }
+int loadData(Product s[]){
+     int count=0;
+     FILE *fp;
+     fp=fopen("product.txt","rt");
+         if(fp==NULL){
+             printf("=>파일 없음\n");
+             return 0;
+         }
+         for(; ;count++){
+             fscanf(fp,"%d  %4dg %4d원 %4d원  %4d개\n",count,&s[count].weight,&s[count].price,&s[count].s_pr    ice,&s[count].star);
+             fgets(s[count].name,sizeof(s[count].name),fp);
+             s[count].name[strlen(s[count].name)] = '\0';
+
+             if(feof(fp))
+                break;
+       }
+         fclose(fp);
+         printf("=>로딩성공!\n");
+         return count;
+ }
