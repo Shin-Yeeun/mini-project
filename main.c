@@ -7,7 +7,7 @@
 
 int main(void){
     Product s[100];
-	 Product p;
+//	 Product p;
 	 int curcount=0;     
     int count=0;
     int menu;
@@ -75,12 +75,10 @@ int main(void){
 					if(deletlist(&s[no-1])) 
 				curcount--;
 }
-				deletlist(&p);
+//				deletlist(s);
 
 				if(count==0){
 					printf("=>삭제됨!!\n");
- 	
-
 	}
 } 				else if(menu==5){
              if(count==0){
